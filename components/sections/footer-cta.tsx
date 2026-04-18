@@ -7,7 +7,7 @@ export function FooterCTA() {
 
   return (
     <section id="contact" className="scroll-mt-24 border-t border-[var(--border)]">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <motion.div
             initial={reduce ? false : { opacity: 0, y: 12 }}
@@ -15,14 +15,14 @@ export function FooterCTA() {
             viewport={{ once: true }}
             transition={{ duration: 0.45 }}
           >
-            <h2 className="font-[family-name:var(--font-syne)] text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="font-[family-name:var(--font-syne)] text-[1.75rem] font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
               Tell us what you&apos;re training next.
             </h2>
-            <p className="mt-4 max-w-md text-[var(--fg-muted)]">
+            <p className="mt-4 max-w-md text-base text-[var(--fg-muted)] sm:text-[1.05rem]">
               Share timelines, modalities, and compliance needs—we&apos;ll
               respond with a scoped pilot, sample rubric, and throughput plan.
             </p>
-            <ul className="mt-8 grid grid-cols-2 gap-3 border-t border-dashed border-[var(--border)] pt-8 font-mono text-[11px] uppercase tracking-widest text-zinc-500 sm:grid-cols-3">
+            <ul className="mt-6 grid grid-cols-2 gap-2 border-t border-dashed border-[var(--border)] pt-6 font-mono text-[11px] uppercase tracking-widest text-zinc-500 sm:mt-8 sm:gap-3 sm:pt-8 md:grid-cols-3">
               <li>→ Scoped pilot</li>
               <li>→ Sample rubric</li>
               <li>→ Throughput plan</li>

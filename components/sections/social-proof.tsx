@@ -26,10 +26,10 @@ export function SocialProof() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="border-b border-[var(--border)] bg-[var(--bg-elevated)] py-12 sm:py-14">
+    <section className="border-b border-[var(--border)] bg-[var(--bg-elevated)] py-12 sm:py-14 lg:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500 sm:text-xs sm:tracking-[0.2em]">
             Used in workflows that ship models from these ecosystems
           </p>
           <p className="max-w-xl text-sm text-zinc-400 lg:text-right">
@@ -38,7 +38,7 @@ export function SocialProof() {
         </div>
       </div>
 
-      <div className="mt-8 border-y border-[var(--border)]">
+      <div className="mt-6 border-y border-[var(--border)] sm:mt-8">
         <div className="mx-auto max-w-[1400px]">
           <LogoMarquee logos={logos} durationSec={42} />
         </div>
@@ -51,7 +51,7 @@ export function SocialProof() {
           respective owners.
         </p>
 
-        <div className="mt-10 grid gap-8 sm:grid-cols-3">
+        <div className="mt-8 grid gap-6 sm:mt-10 sm:grid-cols-3 sm:gap-8">
           {studioMetrics.map((m, i) => (
             <motion.div
               key={m.label}
@@ -60,7 +60,7 @@ export function SocialProof() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
             >
-              <p className="font-[family-name:var(--font-syne)] text-3xl font-semibold text-[var(--fg)] sm:text-4xl">
+              <p className="font-[family-name:var(--font-syne)] text-[1.75rem] font-semibold leading-tight text-[var(--fg)] sm:text-3xl lg:text-4xl">
                 {m.value}
               </p>
               <p className="mt-2 text-sm leading-snug text-[var(--fg-muted)]">
@@ -69,7 +69,7 @@ export function SocialProof() {
             </motion.div>
           ))}
         </div>
-        <div className="mt-10 flex flex-wrap gap-3 border-t border-dashed border-[var(--border)] pt-8">
+        <div className="mt-8 flex flex-wrap gap-2 border-t border-dashed border-[var(--border)] pt-6 sm:mt-10 sm:gap-3 sm:pt-8">
           {[
             "Robotics & autonomy",
             "Clinical imaging",

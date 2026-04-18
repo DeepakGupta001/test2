@@ -13,24 +13,24 @@ export function Differentiators() {
   return (
     <section
       id="differentiators"
-      className="scroll-mt-24 border-b border-[var(--border)] py-16 sm:py-24"
+      className="scroll-mt-24 border-b border-[var(--border)] py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
             What sets us apart
           </p>
-          <h2 className="mt-3 font-[family-name:var(--font-syne)] text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="mt-3 font-[family-name:var(--font-syne)] text-[1.75rem] font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
             Engine, workforce, platform—one integrated loop
           </h2>
-          <p className="mt-4 text-[var(--fg-muted)]">
+          <p className="mt-4 text-base text-[var(--fg-muted)] sm:text-[1.05rem]">
             The same trio trusted data partners use to ship at scale—tuned for
             multimodal programs where a single bad rubric line costs you a
             release window.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-4 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:mt-12 sm:gap-5 lg:mt-14 lg:grid-cols-3 lg:gap-6">
           {differentiators.map((item, i) => {
             const Icon = icons[i] ?? Cpu;
             return (

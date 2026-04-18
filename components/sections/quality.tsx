@@ -14,17 +14,17 @@ export function Quality() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="quality" className="scroll-mt-24 py-16 sm:py-24">
+    <section id="quality" className="scroll-mt-24 py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
             Quality & safety
           </p>
-          <h2 className="mt-3 font-[family-name:var(--font-syne)] text-3xl font-semibold tracking-tight sm:text-4xl">
+          <h2 className="mt-3 font-[family-name:var(--font-syne)] text-[1.75rem] font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
             Evaluations that match production—not demo reels
           </h2>
         </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-3 lg:mt-14 lg:gap-6">
           {qualityHighlights.map((item, i) => {
             const Graphic = graphics[i] ?? PreferenceGraphic;
             return (

@@ -3,9 +3,9 @@ import Link from "next/link";
 export function SiteFooter() {
   return (
     <footer className="border-t border-[var(--border)] bg-[var(--bg-elevated)]">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-        <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr_1fr]">
-          <div>
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:py-16">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr]">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link
               href="/"
               className="font-[family-name:var(--font-syne)] text-xl font-semibold"

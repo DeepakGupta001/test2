@@ -10,18 +10,18 @@ export function CoreServices() {
   return (
     <section
       id="services"
-      className="scroll-mt-24 border-b border-[var(--border)] bg-[var(--bg-elevated)] py-16 sm:py-24"
+      className="scroll-mt-24 border-b border-[var(--border)] bg-[var(--bg-elevated)] py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-center">
+        <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-12">
           <div className="max-w-2xl">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
               Core data services
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-syne)] text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-3 font-[family-name:var(--font-syne)] text-[1.75rem] font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
               Post-training, eval, and multimodal—in one studio
             </h2>
-            <p className="mt-4 text-[var(--fg-muted)]">
+            <p className="mt-4 text-base text-[var(--fg-muted)] sm:text-[1.05rem]">
               The same service classes enterprises expect from top data partners:
               SFT corpora, preference data, rigorous evals, rubrics, dialogue,
               and cross-modal labels—without juggling five vendors.
@@ -32,13 +32,16 @@ export function CoreServices() {
             </p>
           </div>
 
-          <div className="relative mx-auto aspect-square w-full max-w-[320px] text-zinc-500 sm:max-w-[360px]">
-            <div className="absolute inset-0 -z-10 bg-grid opacity-30" />
+          <div className="relative isolate mx-auto aspect-square w-full max-w-[260px] text-zinc-500 sm:max-w-[320px] lg:max-w-[360px]">
+            <div
+              className="bg-grid pointer-events-none absolute inset-0 -z-10 opacity-30"
+              aria-hidden
+            />
             <OrbitGraphic className="h-full w-full" />
           </div>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:mt-14 lg:grid-cols-3 lg:gap-6">
           {coreDataServices.map((svc, i) => (
             <motion.article
               key={svc.title}

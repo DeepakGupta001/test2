@@ -5,22 +5,23 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { modalities } from "@/lib/constants";
 import { ModalityPreview } from "@/components/graphics/modality-preview";
+import { SpeechShowcase } from "@/components/graphics/speech-showcase";
 
 export function Modalities() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="modalities" className="scroll-mt-24 py-16 sm:py-24">
+    <section id="modalities" className="scroll-mt-24 py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between lg:gap-6">
           <div className="max-w-2xl">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
               Capabilities
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-syne)] text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-3 font-[family-name:var(--font-syne)] text-[1.75rem] font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
               Speech, image, video—built for training and eval
             </h2>
-            <p className="mt-4 text-[var(--fg-muted)]">
+            <p className="mt-4 text-base text-[var(--fg-muted)] sm:text-[1.05rem]">
               Pick a modality. Each tile lists production-ready task types we run
               with rubrics, QA gates, and export schemas tailored to your stack.
             </p>
@@ -30,7 +31,7 @@ export function Modalities() {
           </p>
         </div>
 
-        <div className="mt-12 grid auto-rows-fr gap-4 md:grid-cols-4">
+        <div className="mt-10 grid auto-rows-fr gap-4 sm:mt-12 sm:gap-5 md:grid-cols-4 lg:mt-14 lg:gap-6">
           {modalities.map((m, index) => {
             return (
               <motion.article
@@ -61,10 +62,10 @@ export function Modalities() {
                   </div>
                 </div>
                 <div className="flex flex-1 flex-col p-5 sm:p-6">
-                  <h3 className="font-[family-name:var(--font-syne)] text-xl font-semibold text-[var(--fg)]">
+                  <h3 className="font-[family-name:var(--font-syne)] text-lg font-semibold text-[var(--fg)] sm:text-xl">
                     {m.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--fg-muted)]">
+                  <p className="mt-2 text-[0.9rem] leading-relaxed text-[var(--fg-muted)] sm:text-sm">
                     {m.description}
                   </p>
                   <div className="mt-4 border-t border-dashed border-[var(--border)] pt-4">
@@ -75,7 +76,7 @@ export function Modalities() {
                       {m.outcomes.map((o) => (
                         <li
                           key={o}
-                          className="flex gap-2 text-sm leading-snug text-zinc-400"
+                          className="flex gap-2 text-[0.85rem] leading-snug text-zinc-400 sm:text-sm"
                         >
                           <span className="text-[var(--accent)]" aria-hidden>
                             ·
@@ -85,15 +86,16 @@ export function Modalities() {
                       ))}
                     </ul>
                   </div>
-                  <ul className="mt-5 flex flex-wrap gap-2">
+                  <ul className="mt-4 flex flex-wrap gap-1.5 sm:mt-5 sm:gap-2">
                     {m.capabilities.map((cap) => (
                       <li key={cap}>
-                        <span className="inline-block border border-[var(--border)] bg-[var(--bg)] px-2.5 py-1 font-mono text-[11px] leading-tight text-zinc-300 transition-colors group-hover:border-zinc-600">
+                        <span className="inline-block border border-[var(--border)] bg-[var(--bg)] px-2 py-0.5 font-mono text-[10.5px] leading-tight text-zinc-300 transition-colors group-hover:border-zinc-600 sm:px-2.5 sm:py-1 sm:text-[11px]">
                           {cap}
                         </span>
                       </li>
                     ))}
                   </ul>
+                  {m.id === "speech" && <SpeechShowcase />}
                 </div>
               </motion.article>
             );

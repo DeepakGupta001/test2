@@ -10,18 +10,18 @@ export function Process() {
   return (
     <section
       id="process"
-      className="scroll-mt-24 border-y border-[var(--border)] bg-[var(--bg-elevated)] py-16 sm:py-24"
+      className="scroll-mt-24 border-y border-[var(--border)] bg-[var(--bg-elevated)] py-16 sm:py-20 lg:py-24"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-start lg:gap-12">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
               How we work
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-syne)] text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-3 font-[family-name:var(--font-syne)] text-[1.75rem] font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
               From rubric to export—without losing the plot
             </h2>
-            <p className="mt-4 text-[var(--fg-muted)]">
+            <p className="mt-4 text-base text-[var(--fg-muted)] sm:text-[1.05rem]">
               A vertically integrated loop: instructions, reviewers, and
               platform telemetry stay in sync so quality scales with throughput.
             </p>
@@ -38,7 +38,7 @@ export function Process() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="border-b border-[var(--border)] p-5 last:border-b-0 sm:p-6"
+                className="border-b border-[var(--border)] p-5 last:border-b-0 sm:p-6 lg:p-7"
               >
                 <span className="font-mono text-xs text-[var(--accent)]">
                   {String(i + 1).padStart(2, "0")}
@@ -46,7 +46,7 @@ export function Process() {
                 <h3 className="mt-2 font-[family-name:var(--font-syne)] text-lg font-semibold">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--fg-muted)]">
+                <p className="mt-2 text-[0.9rem] leading-relaxed text-[var(--fg-muted)] sm:text-sm">
                   {step.body}
                 </p>
               </motion.li>

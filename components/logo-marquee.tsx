@@ -35,7 +35,7 @@ export function LogoMarquee({
       />
 
       <div
-        className="marquee-track flex w-max gap-14 py-8"
+        className="marquee-track flex w-max gap-10 py-6 sm:gap-14 sm:py-8"
         style={{
           animationDuration: `${durationSec}s`,
           animationDirection: reverse ? "reverse" : "normal",
@@ -44,26 +44,26 @@ export function LogoMarquee({
         {[0, 1].map((loop) => (
           <ul
             key={loop}
-            className="flex shrink-0 items-center gap-14"
+            className="flex shrink-0 items-center gap-10 sm:gap-14"
             aria-hidden={loop === 1}
           >
             {logos.map((logo) => (
               <li
                 key={`${loop}-${logo.label}`}
-                className="flex shrink-0 items-center gap-3 text-zinc-400 transition-colors hover:text-[var(--fg)]"
+                className="flex shrink-0 items-center gap-2.5 text-zinc-400 transition-colors hover:text-[var(--fg)] sm:gap-3"
                 title={logo.label}
               >
                 {logo.type === "icon" ? (
                   <>
-                    <BrandLogo brand={logo.brand} className="h-7 w-7" />
-                    <span className="whitespace-nowrap text-sm font-medium">
+                    <BrandLogo brand={logo.brand} className="h-6 w-6 sm:h-7 sm:w-7" />
+                    <span className="whitespace-nowrap text-[13px] font-medium sm:text-sm">
                       {logo.label}
                     </span>
                   </>
                 ) : (
                   <Wordmark
                     label={logo.label}
-                    className="whitespace-nowrap font-[family-name:var(--font-syne)] text-lg font-semibold tracking-tight"
+                    className="whitespace-nowrap font-[family-name:var(--font-syne)] text-base font-semibold tracking-tight sm:text-lg"
                   />
                 )}
               </li>

@@ -7,12 +7,12 @@ export function ComplianceStrip() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="border-b border-[var(--border)] py-12 sm:py-14">
+    <section className="border-b border-[var(--border)] py-12 sm:py-14 lg:py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-500">
           Trust & governance
         </p>
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-5 md:grid-cols-2 lg:gap-6">
           {complianceNotes.map((c, i) => (
             <motion.div
               key={c.title}
