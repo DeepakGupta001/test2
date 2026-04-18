@@ -2,6 +2,13 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { qualityHighlights } from "@/lib/constants";
+import {
+  PreferenceGraphic,
+  SafetyGraphic,
+  ExportGraphic,
+} from "@/components/graphics/quality-graphics";
+
+const graphics = [PreferenceGraphic, SafetyGraphic, ExportGraphic] as const;
 
 export function Quality() {
   const reduce = useReducedMotion();
@@ -18,23 +25,31 @@ export function Quality() {
           </h2>
         </div>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {qualityHighlights.map((item, i) => (
-            <motion.article
-              key={item.title}
-              initial={reduce ? false : { opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.07 }}
-              className="border border-[var(--border)] bg-[var(--bg-elevated)] p-6 shadow-[4px_4px_0_0_var(--border)]"
-            >
-              <h3 className="font-[family-name:var(--font-syne)] text-lg font-semibold">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--fg-muted)]">
-                {item.body}
-              </p>
-            </motion.article>
-          ))}
+          {qualityHighlights.map((item, i) => {
+            const Graphic = graphics[i] ?? PreferenceGraphic;
+            return (
+              <motion.article
+                key={item.title}
+                initial={reduce ? false : { opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="flex flex-col overflow-hidden border border-[var(--border)] bg-[var(--bg-elevated)] shadow-[4px_4px_0_0_var(--border)]"
+              >
+                <div className="h-32 w-full border-b border-[var(--border)] bg-[var(--bg)] p-3 text-zinc-500">
+                  <Graphic />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="font-[family-name:var(--font-syne)] text-lg font-semibold">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-[var(--fg-muted)]">
+                    {item.body}
+                  </p>
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

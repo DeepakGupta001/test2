@@ -22,7 +22,7 @@ export function Header() {
           href="/"
           className="font-[family-name:var(--font-syne)] text-lg font-semibold tracking-tight text-[var(--fg)]"
         >
-          Fieldnote
+          zyka foundry
           <span className="text-[var(--accent)]">.</span>
         </Link>
         <nav

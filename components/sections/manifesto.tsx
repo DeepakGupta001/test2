@@ -1,12 +1,14 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
+import { CornerTicks } from "@/components/graphics/section-marks";
 
 export function Manifesto() {
   const reduce = useReducedMotion();
 
   return (
-    <section className="border-b border-[var(--border)] py-16 sm:py-20">
+    <section className="relative border-b border-[var(--border)] py-16 sm:py-20">
+      <CornerTicks className="pointer-events-none absolute right-6 top-6 hidden h-20 w-20 text-[var(--accent)] opacity-60 sm:block" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 14 }}
@@ -28,7 +30,7 @@ export function Manifesto() {
             messy.
           </p>
           <footer className="mt-8 font-mono text-xs uppercase tracking-widest text-zinc-500">
-            — Fieldnote studio charter
+            — zyka foundry studio charter
           </footer>
         </motion.div>
       </div>

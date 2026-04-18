@@ -10,7 +10,7 @@ import { unsplashUrl, aboutImage, heroImage } from "@/lib/images";
 export const metadata: Metadata = {
   title: "About — the studio behind the data",
   description:
-    "Fieldnote is a multimodal data studio: rubric-driven workflows, credentialed reviewers, and platform operations built for AI training and evaluation.",
+    "zyka foundry is a multimodal data studio: rubric-driven workflows, credentialed reviewers, and platform operations built for AI training and evaluation.",
 };
 
 const principles = [
@@ -40,7 +40,7 @@ export default function AboutPage() {
         <PageHeader
           eyebrow="About"
           title="A studio for data that models can actually learn from."
-          description="Fieldnote produces training and evaluation data for AI teams—multimodal, rubric-driven, and close enough to the model team that feedback loops stay tight."
+          description="zyka foundry produces training and evaluation data for AI teams—multimodal, rubric-driven, and close enough to the model team that feedback loops stay tight."
           image={{ src: unsplashUrl(aboutImage.id, 1400), alt: aboutImage.alt }}
           crumbs={[{ href: "/about", label: "About" }]}
         />
@@ -62,7 +62,7 @@ export default function AboutPage() {
                 how to label it, and how to know when you&apos;re done.
               </p>
               <p>
-                We started Fieldnote because that upstream work was being
+                We started zyka foundry because that upstream work was being
                 treated as a commodity. It isn&apos;t. It&apos;s craft. Building
                 an assistant that handles a clinical edge case, or a perception
                 system that sees a rare object, starts with humans who care

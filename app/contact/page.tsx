@@ -17,8 +17,8 @@ const channels = [
   {
     icon: Mail,
     title: "Email",
-    body: "hello@fieldnote.studio",
-    cta: "mailto:hello@fieldnote.studio",
+    body: "hello@zykafoundry.com",
+    cta: "mailto:hello@zykafoundry.com",
     ctaLabel: "Send a note",
   },
   {
@@ -32,7 +32,7 @@ const channels = [
     icon: Shield,
     title: "Security review",
     body: "We share SOC-aligned documentation, DPAs, and on-prem options under NDA.",
-    cta: "mailto:security@fieldnote.studio",
+    cta: "mailto:security@zykafoundry.com",
     ctaLabel: "Request the docs",
   },
 ];

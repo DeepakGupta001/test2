@@ -26,20 +26,20 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Fieldnote — Multimodal training data for AI",
-    template: "%s · Fieldnote",
+    default: "zyka foundry — Multimodal training data for AI",
+    template: "%s · zyka foundry",
   },
   description:
     "Human-labeled speech, image, and video data plus SFT corpora, RLHF, rubrics, and eval harnesses—studio-grade QA, MOS/MUSHRA, and exports for model training.",
   openGraph: {
-    title: "Fieldnote — Multimodal training data for AI",
+    title: "zyka foundry — Multimodal training data for AI",
     description:
       "Annotation, post-training data, and evaluations: diarization, segmentation, tracking, LiDAR 3D, dialogue, and multimodal labeling.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fieldnote — Multimodal training data for AI",
+    title: "zyka foundry — Multimodal training data for AI",
     description:
       "Human-labeled data and evaluations for perception and speech models.",
   },

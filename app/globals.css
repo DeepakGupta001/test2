@@ -48,6 +48,36 @@ body {
   mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 75%);
 }
 
+/* Infinite logo marquee */
+@keyframes marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-50% - 1.75rem), 0, 0);
+  }
+}
+
+.marquee-track {
+  animation-name: marquee-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.logo-marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+    transform: none !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 .hero-mesh {
   background:
     radial-gradient(ellipse 120% 80% at 10% -20%, rgba(200, 255, 77, 0.09), transparent 50%),

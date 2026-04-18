@@ -10,7 +10,7 @@ export function SiteFooter() {
               href="/"
               className="font-[family-name:var(--font-syne)] text-xl font-semibold"
             >
-              Fieldnote
+              zyka foundry
               <span className="text-[var(--accent)]">.</span>
             </Link>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-[var(--fg-muted)]">
@@ -43,6 +43,16 @@ export function SiteFooter() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link href="/terms" className="hover:text-[var(--accent)]">
+                  Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="hover:text-[var(--accent)]">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
@@ -69,7 +79,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-4 border-t border-dashed border-[var(--border)] pt-6 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Fieldnote Studio. Data for models.</p>
+          <p>© {new Date().getFullYear()} zyka foundry. Data for models.</p>
           <nav
             className="flex flex-wrap gap-x-5 gap-y-2"
             aria-label="Footer"
@@ -97,6 +107,18 @@ export function SiteFooter() {
               className="font-mono text-[11px] uppercase tracking-widest hover:text-[var(--accent)]"
             >
               Contact
+            </Link>
+            <Link
+              href="/terms"
+              className="font-mono text-[11px] uppercase tracking-widest hover:text-[var(--accent)]"
+            >
+              Terms
+            </Link>
+            <Link
+              href="/privacy"
+              className="font-mono text-[11px] uppercase tracking-widest hover:text-[var(--accent)]"
+            >
+              Privacy
             </Link>
           </nav>
         </div>

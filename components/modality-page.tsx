@@ -7,6 +7,7 @@ import { modalities, type ModalityId } from "@/lib/constants";
 import { modalityPages } from "@/lib/modality-details";
 import { modalityImages, unsplashUrl } from "@/lib/images";
 import { PageHeader } from "@/components/page-header";
+import { TaskIllustration } from "@/components/task-illustrations";
 
 export function ModalityPage({ id }: { id: ModalityId }) {
   const reduce = useReducedMotion();
@@ -60,23 +61,26 @@ export function ModalityPage({ id }: { id: ModalityId }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: (i % 3) * 0.05 }}
-                className="flex flex-col border border-[var(--border)] bg-[var(--bg)] p-5 sm:p-6"
+                className="group flex flex-col overflow-hidden border border-[var(--border)] bg-[var(--bg)] transition-colors hover:border-zinc-600"
               >
-                <h3 className="font-[family-name:var(--font-syne)] text-lg font-semibold">
-                  {d.name}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--fg-muted)]">
-                  {d.body}
-                </p>
-                <ul className="mt-4 flex flex-wrap gap-2 border-t border-dashed border-[var(--border)] pt-4">
-                  {d.formats.map((f) => (
-                    <li key={f}>
-                      <span className="inline-block bg-[var(--accent-dim)] px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-[var(--accent)]">
-                        {f}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                <TaskIllustration kind={d.illustration} />
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <h3 className="font-[family-name:var(--font-syne)] text-lg font-semibold">
+                    {d.name}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--fg-muted)]">
+                    {d.body}
+                  </p>
+                  <ul className="mt-4 flex flex-wrap gap-2 border-t border-dashed border-[var(--border)] pt-4">
+                    {d.formats.map((f) => (
+                      <li key={f}>
+                        <span className="inline-block bg-[var(--accent-dim)] px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-[var(--accent)]">
+                          {f}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </motion.article>
             ))}
           </div>

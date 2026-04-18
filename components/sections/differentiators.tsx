@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Cpu, Users, LayoutDashboard } from "lucide-react";
 import { differentiators } from "@/lib/constants";
+import { DotGrid } from "@/components/graphics/section-marks";
 
 const icons = [Cpu, Users, LayoutDashboard] as const;
 
@@ -45,8 +46,14 @@ export function Differentiators() {
                   className="absolute left-0 top-0 h-1 w-full origin-left scale-x-0 bg-[var(--accent)] transition-transform duration-500 group-hover:scale-x-100"
                   aria-hidden
                 />
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center border border-[var(--border)] bg-[var(--bg)] text-[var(--accent)]">
-                  <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden />
+                <DotGrid className="pointer-events-none absolute right-4 top-4 h-16 w-16 text-[var(--accent)] opacity-40" />
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="inline-flex h-11 w-11 items-center justify-center border border-[var(--border)] bg-[var(--bg)] text-[var(--accent)] shadow-[3px_3px_0_0_var(--border)]">
+                    <Icon className="h-5 w-5" strokeWidth={1.5} aria-hidden />
+                  </div>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+                    {String(i + 1).padStart(2, "0")} / {differentiators.length}
+                  </span>
                 </div>
                 <h3 className="font-[family-name:var(--font-syne)] text-xl font-semibold text-[var(--fg)]">
                   {item.title}

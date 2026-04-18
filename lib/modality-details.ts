@@ -1,9 +1,11 @@
 import type { ModalityId } from "@/lib/constants";
+import type { IllustrationKey } from "@/components/task-illustrations";
 
 export interface CapabilityDetail {
   name: string;
   body: string;
   formats: string[];
+  illustration: IllustrationKey;
 }
 
 export interface ModalityPageData {
@@ -25,41 +27,49 @@ export const modalityPages: Record<ModalityId, ModalityPageData> = {
         name: "Transcription",
         body: "Verbatim, clean-read, or diplomatic—with punctuation policy, disfluency handling, and time-aligned words. Native-speaker reviewers for 60+ locales.",
         formats: ["JSON / WebVTT / TTML", "Word-level timing", "Custom style guide"],
+        illustration: "transcription",
       },
       {
         name: "Speaker diarization",
         body: "Who-spoke-when with overlap handling and speaker identity linking across long sessions. Paired with transcripts for multi-speaker training sets.",
         formats: ["RTTM", "Speaker turn JSON", "Overlap annotations"],
+        illustration: "diarization",
       },
       {
         name: "Emotion & sentiment",
         body: "Multi-label emotion, valence/arousal, and intent-adjacent sentiment. Calibration drills keep reviewers consistent across shifts.",
         formats: ["Per-utterance tags", "Continuous V/A scores"],
+        illustration: "emotion",
       },
       {
         name: "Language identification",
         body: "Code-switch spans, dialect labels, and confidence rationales—useful for routing and for training robust multilingual models.",
         formats: ["Interval-level LID", "Dialect tags"],
+        illustration: "language-id",
       },
       {
         name: "Phoneme alignment",
         body: "Forced-aligned phoneme and syllable boundaries audited by trained linguists, with lexicon variants for TTS and pronunciation modeling.",
         formats: ["TextGrid", "Phoneme JSON"],
+        illustration: "phoneme",
       },
       {
         name: "Audio event tagging",
         body: "Non-speech events (laughter, keyboard, sirens, music) with hierarchical taxonomies—clean signal for audio-LLMs and safety products.",
         formats: ["AudioSet-style labels", "Custom ontologies"],
+        illustration: "audio-events",
       },
       {
         name: "Intent & entity labeling",
         body: "Domain intents, slot values, and dialogue acts—paired with rejection and out-of-scope examples that keep assistants honest.",
         formats: ["NLU JSON", "Rasa / custom schema"],
+        illustration: "intent-entity",
       },
       {
         name: "Spoken language evaluation",
         body: "MOS and MUSHRA panels for TTS, voice cloning, and codec quality—plus side-by-side model ranking with clear stimuli protocols.",
         formats: ["MOS 1–5", "MUSHRA scores", "Pairwise preference"],
+        illustration: "mos-mushra",
       },
     ],
     schemas: [
@@ -101,46 +111,55 @@ export const modalityPages: Record<ModalityId, ModalityPageData> = {
         name: "Bounding boxes",
         body: "2D tight-fit boxes with class + attribute taxonomies, occlusion flags, and crowd handling. Review gates catch boundary drift early.",
         formats: ["COCO", "Pascal VOC", "Custom JSON"],
+        illustration: "bbox",
       },
       {
         name: "Semantic segmentation",
         body: "Per-pixel class masks with clear class priorities for overlapping semantics. Shared palette + versioned ontologies.",
         formats: ["PNG masks", "RLE", "COCO-stuff"],
+        illustration: "semantic-seg",
       },
       {
         name: "Instance segmentation",
         body: "Mask-per-instance for counting, tracking prep, and occlusion-heavy scenes—paired with a clear instance-ID policy.",
         formats: ["COCO-RLE", "LabelMe", "Custom"],
+        illustration: "instance-seg",
       },
       {
         name: "Keypoints & pose",
         body: "Human and object keypoints with visibility flags, skeleton schemas, and calibration for inter-rater consistency.",
         formats: ["COCO keypoints", "Custom skeletons"],
+        illustration: "keypoints",
       },
       {
         name: "Image classification",
         body: "Single-label, multi-label, and hierarchical taxonomies—plus active-learning-ready hard-negative mining.",
         formats: ["CSV / JSON", "WebDataset"],
+        illustration: "classification",
       },
       {
         name: "Polygon & polyline",
         body: "Fine polygons for arbitrary shapes and polylines for lanes, wires, and linear structures. QA on vertex density + closure rules.",
         formats: ["GeoJSON", "LabelMe", "Custom"],
+        illustration: "polygon",
       },
       {
         name: "Medical imaging",
         body: "Radiologist & clinical-reader cohorts with de-identification pathways, DICOM overlays, and inter-reader agreement tracking.",
         formats: ["DICOM-SEG", "NIfTI masks", "Structured reports"],
+        illustration: "medical",
       },
       {
         name: "Quality rating (RLHF)",
         body: "Human preference on generated images—aesthetic, prompt adherence, safety, and artifact rubrics with calibration data.",
         formats: ["Pairwise / Likert", "Rubric scorecards"],
+        illustration: "rlhf-rating",
       },
       {
         name: "OCR & document annotation",
         body: "Text regions, reading order, key-value pairs, tables, and form fields—with multilingual coverage and handwriting handling.",
         formats: ["PAGE XML", "FUNSD-style", "Custom schema"],
+        illustration: "ocr",
       },
     ],
     schemas: [
@@ -182,41 +201,49 @@ export const modalityPages: Record<ModalityId, ModalityPageData> = {
         name: "Object tracking",
         body: "Multi-object tracking with consistent IDs, occlusion handling, and re-identification protocols across long clips.",
         formats: ["MOT JSON", "KITTI-MOT", "Custom"],
+        illustration: "tracking",
       },
       {
         name: "Temporal segmentation",
         body: "Frame-accurate action spans with taxonomy design, boundary tolerance, and adjudication on ambiguous cuts.",
         formats: ["Interval JSON", "ActivityNet-style"],
+        illustration: "temporal-seg",
       },
       {
         name: "Action recognition",
         body: "Atomic and composite actions, paired with hard-negatives and distractor clips to reduce shortcut learning.",
         formats: ["Clip-level tags", "Span-level actions"],
+        illustration: "action",
       },
       {
         name: "3D bounding boxes (LiDAR)",
         body: "Sensor-fusion review with calibrated LiDAR + camera, including track IDs, heading, size, and motion attributes.",
         formats: ["KITTI 3D", "nuScenes-like", "Custom"],
+        illustration: "lidar-3d",
       },
       {
         name: "Human interaction annotation",
         body: "Pose + social-role + interaction graphs for safety-critical and analytics use cases. Reviewer coaching on intent vs. action.",
         formats: ["Interaction JSON", "Graph exports"],
+        illustration: "interaction",
       },
       {
         name: "Video captioning",
         body: "Dense, temporally grounded captions with style guides for video-LLM training and retrieval systems.",
         formats: ["Dense captions JSON", "Time-coded text"],
+        illustration: "captioning",
       },
       {
         name: "Anomaly detection",
         body: "Rare-event mining + labeled anomaly spans with rationale traces—useful for monitoring and safety systems.",
         formats: ["Span-level tags", "Event ontologies"],
+        illustration: "anomaly",
       },
       {
         name: "Video quality evaluation",
         body: "Subjective quality ratings for encoders, generative video, and super-resolution—MOS/ACR and pairwise protocols.",
         formats: ["ACR 1–5", "Pairwise preference"],
+        illustration: "video-quality",
       },
     ],
     schemas: [

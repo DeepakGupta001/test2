@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { processSteps } from "@/lib/constants";
+import { PipelineDiagram } from "@/components/graphics/pipeline-diagram";
 
 export function Process() {
   const reduce = useReducedMotion();
@@ -24,6 +25,10 @@ export function Process() {
               A vertically integrated loop: instructions, reviewers, and
               platform telemetry stay in sync so quality scales with throughput.
             </p>
+
+            <div className="mt-8 text-zinc-500">
+              <PipelineDiagram />
+            </div>
           </div>
           <ol className="space-y-0 border border-[var(--border)] bg-[var(--bg)]">
             {processSteps.map((step, i) => (

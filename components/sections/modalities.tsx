@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { modalities } from "@/lib/constants";
-import { modalityImages, unsplashUrl } from "@/lib/images";
+import { ModalityPreview } from "@/components/graphics/modality-preview";
 
 export function Modalities() {
   const reduce = useReducedMotion();
@@ -33,7 +32,6 @@ export function Modalities() {
 
         <div className="mt-12 grid auto-rows-fr gap-4 md:grid-cols-4">
           {modalities.map((m, index) => {
-            const img = modalityImages[m.id];
             return (
               <motion.article
                 key={m.id}
@@ -48,21 +46,17 @@ export function Modalities() {
                   className="absolute inset-0 z-10"
                   aria-label={`${m.title} — see capability details`}
                 />
-                <div className="relative h-40 w-full overflow-hidden border-b border-[var(--border)]">
-                  <Image
-                    src={unsplashUrl(img.id, 900)}
-                    alt={img.alt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover opacity-70 transition-all duration-500 group-hover:scale-105 group-hover:opacity-90"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-elevated)] via-[var(--bg-elevated)]/40 to-transparent" />
-                  <div className="absolute left-4 top-4 flex items-center gap-2">
+                <div className="relative h-44 w-full overflow-hidden border-b border-[var(--border)] bg-[var(--bg)]">
+                  <ModalityPreview modality={m.id} />
+                  <div className="pointer-events-none absolute inset-x-0 top-0 flex items-center justify-between bg-gradient-to-b from-[var(--bg-elevated)] to-transparent px-4 py-2">
                     <span className="font-mono text-[11px] uppercase tracking-widest text-[var(--accent)]">
                       {m.label}
                     </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+                      preview
+                    </span>
                   </div>
-                  <div className="absolute right-3 top-3 z-20 flex h-8 w-8 items-center justify-center border border-[var(--border)] bg-[var(--bg)] text-[var(--fg)] transition-transform group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 group-hover:border-[var(--accent)]">
+                  <div className="absolute right-3 bottom-3 z-20 flex h-8 w-8 items-center justify-center border border-[var(--border)] bg-[var(--bg)] text-[var(--fg)] transition-transform group-hover:-translate-y-0.5 group-hover:-translate-x-0.5 group-hover:border-[var(--accent)]">
                     <ArrowUpRight className="h-4 w-4" strokeWidth={1.5} />
                   </div>
                 </div>

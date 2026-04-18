@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Work — selected programs & case notes",
   description:
-    "Selected programs Fieldnote has run across robotics, clinical imaging, media, defense, and fintech—each with rubric design, QA, and evaluation-ready exports.",
+    "Selected programs zyka foundry has run across robotics, clinical imaging, media, defense, and fintech—each with rubric design, QA, and evaluation-ready exports.",
 };
 
 const cases = [

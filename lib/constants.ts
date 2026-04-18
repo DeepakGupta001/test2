@@ -150,7 +150,7 @@ export const differentiators = [
 
 /**
  * Core services — themes synthesized from Ethara’s public services page (LLM post-training, eval, rubrics, multimodal).
- * Copy is original to Fieldnote; structure mirrors enterprise data partner offerings.
+ * Copy is original to zyka foundry; structure mirrors enterprise data partner offerings.
  */
 export const coreDataServices = [
   {
@@ -263,7 +263,7 @@ export const complianceNotes = [
 export const footerLinks = [
   { href: "#modalities", label: "Capabilities" },
   { href: "#services", label: "Core services" },
-  { href: "#differentiators", label: "Why Fieldnote" },
+  { href: "#differentiators", label: "Why zyka foundry" },
   { href: "#process", label: "Process" },
   { href: "#quality", label: "Quality" },
   { href: "#contact", label: "Contact" },

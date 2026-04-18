@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { BrandLogo, Wordmark, type BrandKey } from "@/components/brand-logo";
+import { LogoMarquee } from "@/components/logo-marquee";
+import { type BrandKey } from "@/components/brand-logo";
 import { reliabilityLine, studioMetrics } from "@/lib/constants";
 
 type LogoItem =
@@ -35,43 +36,18 @@ export function SocialProof() {
             {reliabilityLine}
           </p>
         </div>
+      </div>
 
-        <div
-          className="mt-8 grid grid-cols-2 items-center gap-y-8 gap-x-6 border-y border-[var(--border)] py-8 sm:grid-cols-3 md:grid-cols-5"
-          role="list"
-          aria-label="Representative AI ecosystem brands"
-        >
-          {logos.map((logo, i) => (
-            <motion.div
-              key={logo.label}
-              role="listitem"
-              initial={reduce ? false : { opacity: 0, y: 6 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: i * 0.03 }}
-              className="flex items-center justify-center gap-2 text-zinc-400 transition-colors hover:text-[var(--fg)]"
-              title={logo.label}
-            >
-              {logo.type === "icon" ? (
-                <>
-                  <BrandLogo brand={logo.brand} className="h-6 w-6" />
-                  <span className="hidden text-sm font-medium lg:inline">
-                    {logo.label}
-                  </span>
-                </>
-              ) : (
-                <Wordmark
-                  label={logo.label}
-                  className="font-[family-name:var(--font-syne)] text-lg font-semibold tracking-tight"
-                />
-              )}
-            </motion.div>
-          ))}
+      <div className="mt-8 border-y border-[var(--border)]">
+        <div className="mx-auto max-w-[1400px]">
+          <LogoMarquee logos={logos} durationSec={42} />
         </div>
+      </div>
 
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <p className="mt-4 font-mono text-[10px] italic text-zinc-600">
-          Brand marks shown represent model & infrastructure ecosystems the
-          Fieldnote stack is compatible with. Logos are property of their
+          Brand marks shown represent model & infrastructure ecosystems the zyka
+          foundry stack is compatible with. Logos are property of their
           respective owners.
         </p>
 
